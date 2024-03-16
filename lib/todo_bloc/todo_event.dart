@@ -2,6 +2,8 @@ part of 'todo_bloc.dart';
 
 sealed class TodoEvent {}
 
+class Initialfetching extends TodoEvent {}
+
 class Adddata extends TodoEvent {
   final String title;
   final String description;
@@ -9,8 +11,16 @@ class Adddata extends TodoEvent {
   Adddata({required this.title, required this.description});
 }
 
-class Editdata extends TodoEvent {}
+class Editdata extends TodoEvent {
+  final String id;
+  final String title;
+  final String description;
 
-class Deletedata extends TodoEvent {}
+  Editdata({required this.id, required this.title, required this.description});
+}
 
-class Initialfetching extends TodoEvent {}
+class Deletedata extends TodoEvent {
+  final String id;
+
+  Deletedata({required this.id});
+}

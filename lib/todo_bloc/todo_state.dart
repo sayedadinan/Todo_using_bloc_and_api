@@ -20,3 +20,21 @@ final class DataAddingError extends TodoState {
 
   DataAddingError(this.error);
 }
+
+class DataDeleting extends TodoState {}
+
+class DataDeletingerror extends TodoState {
+  final String error;
+
+  DataDeletingerror({required this.error});
+}
+
+class Dataediting extends TodoState {}
+
+class DataEditingfinished extends TodoState {}
+
+class Dataeditingerror extends TodoState {
+  final String error;
+
+  Dataeditingerror({required this.error});
+}

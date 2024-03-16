@@ -2,13 +2,13 @@ import 'package:http/http.dart' as http;
 
 class Dataprovider {
   Future<http.Response> getdata() async {
-    const url = 'https://api.nstack.in/v1/todos?page=1&limit=10';
+    const url = 'https://api.nstack.in/v1/todos?page=1&limit=20';
     final uri = Uri.parse(url);
     final response = await http.get(uri);
     return response;
   }
 
-  submitdata(String title, String description) async {
+  submitdata(String title, String description) {
     final body = {"title": title, "description": description};
     return body;
   }
@@ -23,5 +23,10 @@ class Dataprovider {
     } catch (e) {
       return http.Response('error deleting data:$e', 500);
     }
+  }
+
+  Map<String, String> dataediting(String title, String description) {
+    final body = {"title": title, "description": description};
+    return body;
   }
 }
