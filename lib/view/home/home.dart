@@ -25,6 +25,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 124, 152, 127),
         centerTitle: true,
         title: const Text('Todo bloc'),
       ),
@@ -90,12 +91,18 @@ class _HomepageState extends State<Homepage> {
                       ? const EdgeInsets.only(bottom: 80)
                       : const EdgeInsets.all(0),
                   child: Card(
-                    color: Colors.green.shade200,
+                    color: Color.fromARGB(255, 124, 152, 127),
                     margin: const EdgeInsets.all(10),
                     elevation: 3,
                     child: ListTile(
-                      title: Text(item.title),
-                      subtitle: Text(item.description),
+                      title: Text(
+                        item.title,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      subtitle: Text(
+                        item.description,
+                        style: TextStyle(color: Colors.white),
+                      ),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -103,14 +110,20 @@ class _HomepageState extends State<Homepage> {
                               onPressed: () {
                                 showbottomsheet(context, id, index, state);
                               },
-                              icon: const Icon(Icons.edit)),
+                              icon: const Icon(
+                                Icons.edit,
+                                color: Colors.white,
+                              )),
                           IconButton(
                               onPressed: () {
                                 context
                                     .read<TodoBloc>()
                                     .add(Deletedata(id: id));
                               },
-                              icon: const Icon(Icons.delete))
+                              icon: const Icon(
+                                Icons.delete,
+                                color: Colors.white,
+                              ))
                         ],
                       ),
                     ),
