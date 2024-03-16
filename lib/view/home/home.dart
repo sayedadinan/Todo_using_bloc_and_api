@@ -25,7 +25,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 124, 152, 127),
+        backgroundColor: const Color.fromARGB(255, 124, 152, 127),
         centerTitle: true,
         title: const Text('Todo bloc'),
       ),
@@ -91,17 +91,17 @@ class _HomepageState extends State<Homepage> {
                       ? const EdgeInsets.only(bottom: 80)
                       : const EdgeInsets.all(0),
                   child: Card(
-                    color: Color.fromARGB(255, 124, 152, 127),
+                    color: const Color.fromARGB(255, 124, 152, 127),
                     margin: const EdgeInsets.all(10),
                     elevation: 3,
                     child: ListTile(
                       title: Text(
                         item.title,
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                       ),
                       subtitle: Text(
                         item.description,
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                       ),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
